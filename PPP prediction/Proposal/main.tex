@@ -1,0 +1,40 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+
+\usepackage{multicol} 
+
+
+\begin{document}
+\includepdf[pages=-]{cover.pdf}
+%\begin{multicols}{1}
+\section{Introduction}
+We propose to predict the chances of postpartum psychosis based on patient age and history using machine learning models. We outline the potential methods that we could employ, provide explanations for our approaches, and aim to explore the significance of each feature in our prediction. This exploration could potentially unveil hidden connections between the feature under scrutiny and the disease.
+
+\section{A list of potential methods}
+We shall look at those methods for our solution
+\begin{enumerate}
+    \item \textbf{A combination of logistic and linear regression.}\\
+    This method offers a straightforward training process and intuitive interpretation. It supports probabilistic outcomes. However, it requires assuming a direct relationship between features.
+    \item \textbf{Decision tress and Random forests.}\\
+    These methods provide easy training and can identify indirect relationships between features. However, interpreting them can be challenging, and they offer binary classifications.
+    \item \textbf{Nearest-Neighbour/ Non-Parametric methods.}\\
+    This approach can provide probabilistic results and uncover indirect variable relationships. However, prediction complexity increases with more data points, and it lacks direct interpretability.
+\end{enumerate}
+If traditional methods are ineffective, we will explore shallow neural networks. Despite their interpretational complexity, they offer highly accurate probabilistic predictions.
+\section{Desired outcome in an ideal scenario}
+Ideally we would like to archive the following:
+
+\begin{enumerate}
+    \item Have a  predictive model capable of anticipating disease onset. Furthermore, we intend for this model to offer a probabilistic understanding, allowing us to adapt the caution threshold according to individual cases.
+    \item Have a clear interpretation of what the model does and therefore get a better understanding of factors which positively/negatively influence onset of the disease.
+\end{enumerate}
+
+%\end{multicols}
+
+
+\end{document}

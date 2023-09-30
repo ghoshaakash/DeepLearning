@@ -1,31 +1,31 @@
-\contentsline {part}{I\hspace {1em}Theory of Deep Learning}{3}{part.1}%
-\contentsline {chapter}{\numberline {1}Deep Learning}{4}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Traditional Machine Learning}{4}{section.1.1}%
-\contentsline {part}{II\hspace {1em}Natural Language Processing for Deep Learning}{5}{part.2}%
-\contentsline {chapter}{\numberline {2}Why is language a pain to model? And how do we model them.}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Language and ideas}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Why is NLP hard?}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Context and Lexical semantics}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Language as a Markov process}{7}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Language as a stochastic process}{8}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Crude early models and their shortcomings}{8}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Word Embeddings}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Why vectors?}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Data Preparation}{9}{section.3.2}%
-\contentsline {section}{\numberline {3.3}One-hot Representation of Words and Context}{9}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Continuous bag of words model(CBOW)}{9}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.a}Interpretation on a two word window}{10}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}Skip-Gram}{12}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Negative sampling}{13}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Contrastive Estimation}{14}{section.3.7}%
-\contentsline {section}{\numberline {3.8}SVD to learn word representations}{14}{section.3.8}%
-\contentsline {section}{\numberline {3.9}GloVe Representations}{14}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Other embeddings}{15}{section.3.10}%
-\contentsline {part}{III\hspace {1em}Project: Using Deep Learning To Predict and Trade derivatives}{16}{part.3}%
-\contentsline {chapter}{\numberline {4}Derivatives, Options and Futures}{17}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Sequence Modelling}{18}{chapter.5}%
-\contentsline {part}{IV\hspace {1em}Codes}{19}{part.4}%
-\contentsline {chapter}{\numberline {6}Tensorflow ANN Cookbook}{20}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introduction}{20}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Include Script}{20}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Loading Data}{20}{section.6.3}%
+\contentsline {part}{I\hspace {1em}Theory of Deep Learning}{2}{part.1}%
+\contentsline {chapter}{\numberline {1}Deep Learning}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Traditional Machine Learning}{3}{section.1.1}%
+\contentsline {part}{II\hspace {1em}Natural Language Processing for Deep Learning}{4}{part.2}%
+\contentsline {chapter}{\numberline {2}Why is language a pain to model? And how do we model them.}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Language and ideas}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Why is NLP hard?}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Context and Lexical semantics}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Language as a Markov process}{6}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Language as a stochastic process}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Crude early models and their shortcomings}{7}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Word Embeddings}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Why vectors?}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Data Preparation}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}One-hot Representation of Words and Context}{8}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Continuous bag of words model(CBOW)}{8}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.a}Interpretation on a two word window}{9}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Skip-Gram}{11}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Negative sampling}{12}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Contrastive Estimation}{13}{section.3.7}%
+\contentsline {section}{\numberline {3.8}SVD to learn word representations}{13}{section.3.8}%
+\contentsline {section}{\numberline {3.9}GloVe Representations}{13}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Other embeddings}{14}{section.3.10}%
+\contentsline {part}{III\hspace {1em}Project: Using Deep Learning To Predict and Trade derivatives}{15}{part.3}%
+\contentsline {chapter}{\numberline {4}Derivatives, Options and Futures}{16}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Sequence Modelling}{17}{chapter.5}%
+\contentsline {part}{IV\hspace {1em}Codes}{18}{part.4}%
+\contentsline {chapter}{\numberline {6}Tensorflow ANN Cookbook}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{19}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Include Script}{19}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Loading Data}{19}{section.6.3}%

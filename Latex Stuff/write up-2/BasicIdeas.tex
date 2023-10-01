@@ -1,4 +1,4 @@
-\chapter{Fundamental Ideas}
+\chapter{The Fundamental Idea}
 \section{Introduction}
 We assume familiarity with traditional machine learning, basic probability and statistics. We look at why a different perspective
 is needed and why deep learning is a suitable alternative.
@@ -82,4 +82,11 @@ Deep learning models are better when data is unstructured or there are a lot of 
 need to be considered. With proper construction and training almost any decision boundaries
 can be learned.
 \section{The perceptron}
-As mentioned before, a perceptron can be thought to be an artificial neuron. 
+As mentioned before, a perceptron can be thought to be an artificial neuron. We make a simplification and assume that each perceptron is responsible for identifying some pattern $P$. A scheme of what a perceptron looks like is given in \ref{perceptron}
+\begin{marginfigure}
+    \begin{center}
+        \includegraphics[width=\textwidth]{graphics/nobg perceptron.png}
+    \end{center}
+    \caption{Schematic diagram of a perceptron,\textit{Src: MIT Introduction to Deep Learning,6.S191,Lec-1}}\label{perceptron}
+\end{marginfigure} 
+We assume the perceptron returns a high value when it detects $P$. The inputs to a perceptron can be features from known observation or outputs of other neuron. Let the inputs be $x_1,x_2\hdots x_n$. We arrange them neatly in a vector $X=[x_1,x_2,x_3\hdots x_n]$. Each of those $x_i$s can be thought to be the presence and absence of a simpler feature. We take a weighted sum of those inputs to get $s=\sum_{1\leq i\leq n}w_ix_i+w_0$. The intuition is the magnitude of $w_i$ is a measure of the importance of feature $x_i$ and the sign is the direction in which $x_i$ affects the feature which the perceptron is detecting. For example, if the perceptron is detecting if the input is 8 and $x_i$ is the output from another perceptron that detects if a straight line is present then $w_i$ will be negative: there is no straight line in 8. On the other hand,  $x_j$ is the output from another perceptron that detects if a circle is present then $w_i$ will be positive: there are two of them in 8. $w_0$ is just a centering constant. The output of the perceptron will be $y=\sigma(s)$, where $\sigma$ is known as the activation function. 

@@ -87,6 +87,10 @@ in correcting the direction of descent.
     \end{center}
     \caption{Chain rule in deep networks}\label{path}
 \end{figure*}
+
+\subsection{Gradient Clipping}
+In case one of the components of the gradient is much lager than other we
+might want to normalize it to control our descent. One way it to just limit it at some maximum value. Other methods include normalizing the whole vector with respect to a norm.
 \section{Setting the learning rate}
 \begin{figure}
     \includegraphics[width=\textwidth]{graphics/learning rate.jpeg}
@@ -121,4 +125,68 @@ enables the network to quickly explore a wide range of learning rates at the
 beginning and then gradually refine its weights as the learning rate
 decreases.
 \section{Choosing Activation function}
-The loss function and the gradients propagated backwards depend on the activation functions used. A bad activation function(for example, a function which is not differentiable everywhere) can make training very hard. We first look at some 
+The loss function and the gradients propagated backwards depend on the activation functions used. A bad activation function(for example, a function which is not differentiable everywhere) can make training very hard. We first look at some problem that might arise due to poor choice of activation problem(Although, some of those problems might arise even with the correct choice of activation function).
+\subsection{Dead Neurons}
+Many activation functions saturate/become constant in certain regions. This leads to 0 gradient flowing backwards from neurons and neurons connected to those neurons don't get properly trained. Moreover, if weights associated with those neurons are always too high/too low, they always return a high/low value regardless of input. Such neurons are called dead: they might as well not exist, and the network will run without much change.
+
+Those problems suggest that we might want out function to not saturate easily.
+\subsection{Presence of local minimas}
+We don't want local minimas in our loss function: gradient descent algorithms might get stuck over there. We therefore attempt to make sure that our activation function is strictly increasing. On a brighter note, in most cases, a local minima is good enough.
+\subsection{Exploding and vanishing gradients}
+The effect of derivatives magnifies
+down the layers. If the order of
+magnitude is above 1(say 10) then it
+explodes(after 10 layers it will
+become $10^{10}$). If the order of
+magnitude is below 1(say 1/10) then
+it vanishes(after 10 layers it will
+become $10^{-10}$). From a more practical viewpoint,
+this might lead to value overflow if the
+gradient explodes. If it is vanishing,
+then there might not be enough
+precision to handle the values.
+
+\subsection{Classical Activation Functions}
+Classically, we used sigmoid, tanh and relu as activation functions of choice. All three of them  saturate and can lead to dead neurons. Still, sigmoid is used even nor in LSTMS as it gives an output between 0 and 1. 
+\subsection{Newer Activation functions}
+Newer activation functions were created which were modified versions of relu like leaky relu, elu and selu. More exotic activation functions also exist like gelu, swish and mish. In some cases those functions are more expensive to compute, but the neurons are trained fast enough to compensate for the extra computation time and the there is an overall decrease in wall time.
+\section{Weight Initialization}
+We wish to initialize weights randomly. As best explained by Goodfellow\citep{goodfellow2016deep}: "Perhaps the only property known with complete certainty is that the initial parameters need to “break symmetry” between different units. If two hidden units with the same activation function are connected to the same inputs, then these units must have different initial parameters. If they have the same initial parameters, then a deterministic learning algorithm applied to a deterministic cost and model will constantly update both of these units in the same way".
+
+Initially weights were initialized by picking from a standard normal
+distribution. But it can be shown that this cause problem when there difference in number of inputs/outputs among nodes. An intuitive analogy is when the amount of change fed to it is different from the change it outputs during gradient descent. In He initialization We initialize by picking values from a normal distribution with a variance of $\sqrt{2/n}$ where $n$ is the number of incoming nodes. We can also use $n=$average of number of input and output nodes. 
+
+\section{Aspects of a deep neural network} While a single hidden layer is enough,
+making a deep neural network allows us to
+have more complex decision boundaries
+with relatively less number of nodes: adding depth gives
+ore bang for the buck than adding more nodes in a single layer. But depth
+comes with its own share of problems. Deeper networks have a harder time converging. Moreover, if activation functions are not combined properly then there might be
+presence of local minimas. We discuss two methods which can help with this.
+\subsection{Skip connections}
+\begin{marginfigure}
+    \includegraphics[width=\textwidth]{graphics/skip.png}
+    \caption{Skip connections
+    \citep{aggarwal2018neural}}
+\end{marginfigure}
+We might allow nodes from deeper layers to
+have direct access to nodes from shallower
+layers while skipping the intermediate
+layers. This provides a kind of highway for the
+deeper layers to access simpler features makes sure that only required higher level features are learned. Also, this reduces a bit of the problems from gradient flows as shallower layers doesn't depend only on the shallower layers for gradient updates. They can also get trained before all the middle layers get their weights right.
+\subsection{Maxout Networks}
+\begin{figure}
+    \includegraphics[width=\textwidth]{graphics/maxout.png}
+    \caption{Maxout Networks\citep{sun2018improving}}
+\end{figure}
+\noindent In a certain sense this is type of ensemble
+method. Two sets of weights $W_1$, $W_2$ are trained for
+each perceptron. The activation is set to
+$\sigma (\max(W_1 \cdot X_{in} , W_2 \cdot X_{in} ) + b_0)$
+\section{Setting hyperparameters}
+Apart from the usual parameters for activation functions, there are other
+hyperparameters to be set. Those include stuff like number of layers, number of nodes in a layer,
+presence and nature of skip connections, presence and nature of max-out
+layers, choice of activation functions, choice of learning rates and schedules. It is not practical to test on the training dataset to prevent
+overfitting(discussed later) nor is it desired to test on the testing dataset. In such a scenario using the cross validation set is our best bet. For setting the hyperparameters we simply choose a possible set of values (a point in $\mathbb R^n$)
+for each parameter and try everything on the Grid. We start with coarse grids and then move on to finer ones. The idea is trying all points on the grid by running small number of epochs, see what fits best and then train on those parameters. 

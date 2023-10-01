@@ -92,4 +92,33 @@ in correcting the direction of descent.
     \includegraphics[width=\textwidth]{graphics/learning rate.jpeg}
     \caption{Why is setting a proper learning rate important\citep{geron2022hands}}
 \end{figure}
-As mentioned before, 
+\subsection{Adaptive learning rate}
+One way to take care of this problem is  to let different parameters have different learning rates. The idea is that parameters with large partial derivatives are often oscillating
+and zigzagging, whereas parameters with small partial derivatives tend to be
+more consistent but move in the same direction.
+Algorithms include AdaGrad, RMSProp and AdaDelta. Parametric algorithms
+combined with momentum considerations also exist: RMSProp with Nesterov
+Momentum, ADAM and it's variants like AdaMax, Nadam and AdamW. A quick
+comparison table is available at \citep{geron2022hands}
+\subsection{Learning rate scheduling}
+We have the learning rate high at first so
+that it gets a relative idea about where the
+minima lies, and then we lower it to find it
+with more accuracy. Scheduling is done on numbers of iterations
+completed(each iteration is also called an
+epoch)
+\begin{marginfigure}
+    \includegraphics[width=1.3\textwidth]{graphics/learning rate schedule.png}\caption{Learning rate scheduling\citep{geron2022hands}}
+\end{marginfigure}
+\subsection{One cycle scheduling}
+The basic idea behind one cycle scheduling is to start with a low learning
+rate, gradually increase it to a maximum value, and then decrease it again to
+a low value. This approach helps the network explore a wide range of
+learning rates, allowing it to quickly converge to a good solution and
+potentially escape from local minima. By using a cyclical learning rate schedule, one cycle scheduling aims to strike
+a balance between exploration and exploitation in the learning process. It
+enables the network to quickly explore a wide range of learning rates at the
+beginning and then gradually refine its weights as the learning rate
+decreases.
+\section{Choosing Activation function}
+The loss function and the gradients propagated backwards depend on the activation functions used. A bad activation function(for example, a function which is not differentiable everywhere) can make training very hard. We first look at some 

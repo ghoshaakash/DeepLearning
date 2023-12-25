@@ -1,0 +1,25 @@
+\ttl@starttoc {part@1}
+\contentsline {part}{\numberline {I}Seq to Seq Models}{7}{part.1}%
+\contentsline {chapter}{\numberline {1}Attention Models}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Intuition}{9}{section.1.1}%
+\ttl@stoptoc {part@1}
+\ttl@starttoc {part@2}
+\contentsline {part}{\numberline {II}Language Models}{11}{part.2}%
+\contentsline {chapter}{\numberline {2}Earlier Works}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Bigram models}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}MLP models with word embeddings}{13}{section.2.3}%
+\ttl@stoptoc {part@2}
+\ttl@starttoc {part@3}
+\contentsline {part}{\numberline {III}Misc. topics}{15}{part.3}%
+\contentsline {chapter}{\numberline {3}Distributed Systems}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{17}{section.3.1}%
+\ttl@stoptoc {part@3}
+\ttl@starttoc {part@4}
+\contentsline {part}{\numberline {IV}Appendices and Codes}{19}{part.4}%
+\contentsline {chapter}{Appendices}{21}{section*.3}%
+\contentsline {chapter}{\numberline {A}Appendix Chapter Title}{21}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}Appendix Section Title}{21}{section.a.A.1}%
+\contentsline {chapter}{\numberline {B}Appendix Chapter Title}{23}{appendix.a.B}%
+\contentsline {section}{\numberline {B.1}Appendix Section Title}{23}{section.a.B.1}%
+\contentsfinish 
